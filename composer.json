@@ -1,0 +1,22 @@
+{
+    "name": "grozwalker/crud",
+    "description": "Crud for Rutorika Team",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitriy Groza",
+            "email": "boxfrommars@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+
+        "psr-4": {
+
+            "Grozwalker\\Crud\\": "src/"
+
+        }
+
+    }
+}
