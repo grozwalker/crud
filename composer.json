@@ -2,6 +2,7 @@
     "name": "grozwalker/crud",
     "description": "Crud for Rutorika Team",
     "type": "library",
+    "minimum-stability": "stable"
     "license": "MIT",
     "authors": [
         {
