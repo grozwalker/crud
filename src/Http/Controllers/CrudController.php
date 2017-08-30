@@ -3,6 +3,7 @@
 namespace Grozwalker\Crud\Http\Controllers;
 
 use Illuminate\Routing\Controller;
+use Illuminate\Http\Request;
 
 class CrudController extends Controller
 {
