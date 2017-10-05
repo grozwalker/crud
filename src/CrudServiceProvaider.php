@@ -8,7 +8,7 @@ use Illuminate\Support\ServiceProvider;
 class CrudServiceProvaider extends ServiceProvider
 {
     public function boot(){
-
+ 
     }
 
     public function register()
