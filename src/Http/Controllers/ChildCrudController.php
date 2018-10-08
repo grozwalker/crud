@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use Validator;
 use Illuminate\Http\Request;
-
 use App\Http\Controllers\Controller;
 
 class ChildCrudController extends Controller
@@ -171,11 +171,6 @@ class ChildCrudController extends Controller
      */
     public function validate(Request $request, array $rules, array $messages = [], array $customAttributes = [])
     {
-        $validator = $this->getValidationFactory()->make($request->all(), $rules, $messages, $customAttributes);
-
-        if ($validator->fails()) {
-            $request->session()->flash('alert-danger', 'Проверьте правильность заполнения полей');
-            $this->throwValidationException($request, $validator);
-        }
+        Validator::make($request->all(), $rules, $messages, $customAttributes)->validate();
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Grozwalker\Crud\Http\Controllers;
 
+use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -187,12 +188,7 @@ class CrudController extends Controller
      */
     public function validate(Request $request, array $rules, array $messages = [], array $customAttributes = [])
     {
-        $validator = $this->getValidationFactory()->make($request->all(), $rules, $messages, $customAttributes);
-
-        if ($validator->fails()) {
-            $request->session()->flash('alert-danger', 'Проверьте правильность заполнения полей');
-            $this->throwValidationException($request, $validator);
-        }
+        Validator::make($request->all(), $rules, $messages, $customAttributes)->validate();
     }
 
     protected function prepareEntityFields(Request $request)
